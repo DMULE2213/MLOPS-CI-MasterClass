@@ -1,37 +1,33 @@
-import pytest 
+import pytest
 
-# function to test the square
+# Function to test square
 def square(n):
     return n ** 2
 
-# function to test cube
+# Function to test cube
 def cube(n):
     return n ** 3
 
-
-# function to test fifth
+# Function to test fifth power
 def fifth_power(n):
     return n ** 5
 
-# test the square fuction
-def test_square(n):
-    assert square(2) == 4, " Test failed: square of 2 should be 4"
-    assert square(3) == 9, " Test failed: square of 3 should be 9"
+# Testing the square function
+def test_square():
+    assert square(2) == 4, "Test Failed: Square of 2 should be 4"
+    assert square(3) == 9, "Test Failed: Square of 3 should be 9"
 
+# Testing the cube function
+def test_cube():
+    assert cube(2) == 8, "Test Failed: Cube of 2 should be 8"
+    assert cube(3) == 27, "Test Failed: Cube of 3 should be 27"
 
-# test the cube function
-def test_cube(n):
-    assert cube(2) == 8, " Test failed: cube of 2 should be 8"
-    assert cube(3) == 27, " Test failed cube of 3 should be 27"
+# Testing the fifth power function
+def test_fifth_power():
+    assert fifth_power(2) == 32, "Test Failed: Fifth power of 2 should be 32"
+    assert fifth_power(3) == 243, "Test Failed: Fifth power of 3 should be 243"
 
-
-# test the fifth_power
-def test_fifth_power(n):
-    assert fifth_power(2) == 32, " Test failed: fifth power of 2 should be 32"
-    assert fifth_power(3) == 243, " Test failed: Fifth power of 3 should be 243"
-
-
-# test for invalid input 
+# Test for invalid input
 def test_invalid_input():
     with pytest.raises(TypeError):
         square("string")
